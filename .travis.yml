@@ -1,4 +1,9 @@
-sudo: required
+os: linux
+dist: focal
+group: edge
+language: generic
+git:
+  depth: 1
 addons:
   apt:
     update:
@@ -7,6 +12,7 @@ addons:
       - aria2
       - zstd
       - xz-utils
+sudo: required
 services:
   - docker
 before_install:
