@@ -19,9 +19,9 @@ before_install:
   - docker pull fr3akyphantom/droid-builder:latest
 before_script:
   - cd $HOME && mkdir twrp
-  - wget -q https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.4.0-20201108/MinimalOmniRecovery-twrp-8.1-norepo-20201108.tzst.aa
-    -O $HOME/MinimalOmniRecovery-twrp-8.1-norepo-20201108.tzst
-  - tar --zstd -xf MinimalOmniRecovery-twrp-8.1-norepo-20201108.tzst --directory $HOME/twrp/ && rm MinimalOmniRecovery-twrp-8.1-norepo-20201108.tzst
+  - wget -q https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.4.0-20201103/MinimalOmniRecovery-twrp-8.1-norepo-20201103.tzst.aa
+  -O $HOME/twrp.tzst
+  - tar --zstd -xf twrp.tzst --directory $HOME/twrp/ && rm twrp.tzst
 script:
   - cd $HOME/twrp/ && git clone https://github.com/thespider1/android_device_lava_iris65.git device/lava/iris65
   - git clone https://github.com/TwrpBuilder/android_device_generic_twrpbuilder.git device/generic/twrpbuilder
